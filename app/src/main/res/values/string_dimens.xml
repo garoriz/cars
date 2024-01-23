@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--размеры теста-->
+<resources>
+    <dimen name="size16">16sp</dimen>
+    <dimen name="size24">24sp</dimen>
+    <dimen name="size32">32sp</dimen>
+</resources>

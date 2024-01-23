@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?><!--стили-->
+<resources>
+
+    <style name="Text" parent="TextAppearance.AppCompat" />
+
+    <style name="Text.Size32">
+        <item name="android:textSize">@dimen/size32</item>
+    </style>
+
+    <style name="Text.Size32.JuraSemiBold">
+        <item name="android:fontFamily">@font/jura_semibold</item>
+    </style>
+
+    <style name="Text.Size24">
+        <item name="android:textSize">@dimen/size24</item>
+    </style>
+
+    <style name="Text.Size24.JuraSemiBold">
+        <item name="android:fontFamily">@font/jura_semibold</item>
+    </style>
+
+    <style name="Parameters">
+        <item name="strokeWidth">@dimen/x0</item>
+    </style>
+
+    <style name="VerticalRecyclerView" parent="">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="Text.Size16">
+        <item name="android:textSize">@dimen/size16</item>
+    </style>
+
+    <style name="Text.Size16.Primary">
+        <item name="android:textColor">?attr/colorPrimaryText</item>
+    </style>
+
+    <style name="Text.Size16.Primary.JuraSemiBold">
+        <item name="android:fontFamily">@font/jura_semibold</item>
+    </style>
+
+    <style name="Text.Size16.Primary.JuraBold">
+        <item name="android:fontFamily">@font/jura_bold</item>
+    </style>
+
+    <style name="OnlyNumbersTextInputEditText">
+        <item name="android:inputType">number</item>
+    </style>
+
+    <style name="TextInputLayout">
+        <item name="android:textColorHint">?attr/colorHintText</item>
+    </style>
+
+    <style name="PasswordTextInputEditText">
+        <item name="android:inputType">textPassword</item>
+    </style>
+
+    <style name="TextInputLayout.Password">
+        <item name="endIconMode">password_toggle</item>
+    </style>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--аттрибуты-->
+<resources>
+    <attr name="colorPrimaryText" format="color" />
+    <attr name="colorHintText" format="color" />
+</resources>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".feature.car.presentation.CarFragment">
+
+    <TextView
+        android:id="@+id/tv_car"
+        style="@style/Text.Size32.JuraSemiBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/x1"
+        android:layout_marginTop="@dimen/x1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Honda Civic, 1998" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_car"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/x1"
+        android:layout_marginTop="@dimen/x1"
+        app:layout_constraintTop_toBottomOf="@id/tv_car"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tv_gearbox"
+        style="@style/Text.Size16.Primary.JuraSemiBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/x1"
+        android:layout_marginTop="@dimen/x1"
+        android:text="@string/gearbox_with_colon"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_car" />
+
+    <TextView
+        android:id="@+id/tv_gearbox_value"
+        style="@style/Text.Size16.Primary.JuraSemiBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/x1"
+        android:layout_marginTop="@dimen/x1"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/tv_gearbox"
+        app:layout_constraintTop_toBottomOf="@id/iv_car"
+        tools:text="Механическая" />
+
+    <TextView
+        android:id="@+id/tv_capacity"
+        style="@style/Text.Size16.Primary.JuraSemiBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/x1"
+        android:layout_marginTop="@dimen/x1"
+        android:text="@string/capacity_with_colon"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_gearbox" />
+
+    <TextView
+        android:id="@+id/tv_capacity_value"
+        style="@style/Text.Size16.Primary.JuraSemiBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/x1"
+        android:layout_marginTop="@dimen/x1"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/tv_capacity"
+        app:layout_constraintTop_toBottomOf="@id/tv_gearbox_value"
+        tools:text="999 л.с." />
+
+    <TextView
+        android:id="@+id/tv_color"
+        style="@style/Text.Size16.Primary.JuraSemiBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/x1"
+        android:layout_marginTop="@dimen/x1"
+        android:text="@string/color_with_colon"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_capacity" />
+
+    <TextView
+        android:id="@+id/tv_color_value"
+        style="@style/Text.Size16.Primary.JuraSemiBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/x1"
+        android:layout_marginTop="@dimen/x1"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/tv_color"
+        app:layout_constraintTop_toBottomOf="@id/tv_capacity_value"
+        tools:text="Жёлто-чёрный" />
+
+    <TextView
+        android:id="@+id/tv_price"
+        style="@style/Text.Size16.Primary.JuraBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/x1"
+        android:layout_marginTop="@dimen/x1"
+        android:text="@string/price_with_colon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_color" />
+
+    <TextView
+        style="@style/Text.Size16.Primary.JuraBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/x1"
+        android:layout_marginTop="@dimen/x1"
+        tools:text="375 000 Р"
+        app:layout_constraintStart_toEndOf="@id/tv_color"
+        app:layout_constraintTop_toBottomOf="@id/tv_color_value" />
+</androidx.constraintlayout.widget.ConstraintLayout>

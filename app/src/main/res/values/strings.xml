@@ -1,0 +1,27 @@
+<!--строки-->
+<resources>
+    <string name="app_name">Cars</string>
+    <string name="cars">Автомобили</string>
+    <string name="parameters">Параметры</string>
+    <string name="brand">Марка</string>
+    <string name="model">Модель</string>
+    <string name="year">Год</string>
+    <string name="gearbox">Коробка передач</string>
+    <string name="capacity">Мощность</string>
+    <string name="color">Цвет</string>
+    <string name="searching">Поиск</string>
+    <string name="gearbox_with_colon">Коробка передач:</string>
+    <string name="capacity_with_colon">Мощность:</string>
+    <string name="color_with_colon">Цвет:</string>
+    <string name="price_with_colon">Цена:</string>
+    <string name="authorization">Авторизация</string>
+    <string name="login">Логин</string>
+    <string name="password">Пароль</string>
+    <string name="account_login">Вход</string>
+    <string name="shared_preferences_name">is login</string>
+    <string name="is_login">is login</string>
+    <string name="incorrect_login_and_or_password">Неправильные логин и/или пароль</string>
+    <string name="profile">Профиль</string>
+    <string name="add_car">Добавить автомобиль</string>
+    <string name="exit">Выйти</string>
+</resources>
