@@ -4,18 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".feature.params.presentation.ParamsFragment">
+    tools:context=".feature.addcar.presentation.AddCarFragment">
 
     <TextView
-        android:id="@+id/tv_params"
+        android:id="@+id/tv_add_car"
         style="@style/Text.Size32.JuraSemiBold"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/x1"
+        android:layout_marginHorizontal="@dimen/x1"
         android:layout_marginTop="@dimen/x1"
-        android:text="@string/parameters"
+        android:text="@string/adding_new_car"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_add_media"
+        style="@style/Text.Size16.Secondary.JuraSemiBold.AddingPhoto"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/x1"
+        android:layout_marginStart="@dimen/x1"
+        android:layout_height="wrap_content"
+        android:text="@string/adding_photo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_add_car" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_brand"
@@ -24,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/x1"
         android:layout_marginTop="@dimen/x1"
-        app:layout_constraintTop_toBottomOf="@id/tv_params">
+        app:layout_constraintTop_toBottomOf="@id/tv_add_media">
 
         <com.google.android.material.textfield.TextInputEditText
             style="@style/TextInputEditText"
@@ -80,7 +91,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/gearbox"
-            android:text="@string/any"
             android:inputType="none" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -117,12 +127,29 @@
             android:hint="@string/color" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_search"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_price"
+        style="@style/TextInputLayout"
         android:layout_width="match_parent"
-        android:layout_marginTop="@dimen/x1"
-        android:layout_marginHorizontal="@dimen/x1"
-        android:text="@string/searching"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/til_color" />
+        android:layout_marginHorizontal="@dimen/x1"
+        android:layout_marginTop="@dimen/x1"
+        app:layout_constraintTop_toBottomOf="@id/til_color">
+
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/TextInputEditText.OnlyNumbers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/price" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/x1"
+        android:layout_marginTop="@dimen/x5"
+        android:text="@string/add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/til_price" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,5 +2,6 @@
 <!--аттрибуты-->
 <resources>
     <attr name="colorPrimaryText" format="color" />
+    <attr name="colorSecondaryText" format="color" />
     <attr name="colorHintText" format="color" />
 </resources>

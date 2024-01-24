@@ -3,6 +3,7 @@
     <style name="Base.Theme.Cars" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimaryText">@color/black</item>
         <item name="colorHintText">@color/grey</item>
+        <item name="colorSecondaryText">@color/blue</item>
     </style>
 
     <style name="Theme.Cars" parent="Base.Theme.Cars" />

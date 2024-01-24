@@ -31,6 +31,20 @@
         <item name="android:textSize">@dimen/size16</item>
     </style>
 
+    <style name="Text.Size16.Secondary">
+        <item name="android:textColor">?attr/colorSecondaryText</item>
+    </style>
+
+    <style name="Text.Size16.Secondary.JuraSemiBold">
+        <item name="android:fontFamily">@font/jura_semibold</item>
+    </style>
+
+    <style name="Text.Size16.Secondary.JuraSemiBold.AddingPhoto">
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
     <style name="Text.Size16.Primary">
         <item name="android:textColor">?attr/colorPrimaryText</item>
     </style>
@@ -43,15 +57,19 @@
         <item name="android:fontFamily">@font/jura_bold</item>
     </style>
 
-    <style name="OnlyNumbersTextInputEditText">
-        <item name="android:inputType">number</item>
-    </style>
-
     <style name="TextInputLayout">
         <item name="android:textColorHint">?attr/colorHintText</item>
     </style>
 
-    <style name="PasswordTextInputEditText">
+    <style name="TextInputEditText">
+        <item name="android:fontFamily">@font/jura_semibold</item>
+    </style>
+
+    <style name="TextInputEditText.OnlyNumbers">
+        <item name="android:inputType">number</item>
+    </style>
+
+    <style name="TextInputEditText.Password">
         <item name="android:inputType">textPassword</item>
     </style>
 

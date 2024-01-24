@@ -20,6 +20,9 @@
         <action
             android:id="@+id/action_mainFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_carFragment"
+            app:destination="@id/carFragment" />
     </fragment>
     <fragment
         android:id="@+id/paramsFragment"
@@ -39,5 +42,26 @@
         android:id="@+id/profileFragment"
         android:name="com.example.cars.feature.profile.presentation.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_addCarFragment"
+            app:destination="@id/addCarFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCarFragment"
+        android:name="com.example.cars.feature.addcar.presentation.AddCarFragment"
+        android:label="fragment_add_car"
+        tools:layout="@layout/fragment_add_car" >
+        <action
+            android:id="@+id/action_addCarFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/carFragment"
+        android:name="com.example.cars.feature.car.presentation.CarFragment"
+        android:label="fragment_car"
+        tools:layout="@layout/fragment_car" />
 </navigation>

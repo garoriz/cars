@@ -4,6 +4,7 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.example.cars.R
 import com.example.cars.databinding.FragmentProfileBinding
 
@@ -28,7 +29,21 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         binding = FragmentProfileBinding.bind(view)
 
         with(binding) {
+            /* при нажатии на кнопку "Добавить автомобиль" происходит переход к соответствующему
+            экрану*/
+            btnAddCar.setOnClickListener {
+                view.findNavController().navigate(R.id.action_profileFragment_to_addCarFragment)
+            }
 
+            // при нажатии на кнопку "Выход" перезаписывается 'is login' в Shared Preferences и
+            // происходит переход к главному экрану
+            btnExit.setOnClickListener {
+                with(sharedPreferences.edit()) {
+                    putBoolean(getString(R.string.is_login), false)
+                    apply()
+                }
+                view.findNavController().popBackStack()
+            }
         }
     }
 }

@@ -24,4 +24,11 @@
     <string name="profile">Профиль</string>
     <string name="add_car">Добавить автомобиль</string>
     <string name="exit">Выйти</string>
+    <string name="adding_new_car">Добавление новой машины</string>
+    <string name="adding_photo">Добавить фото</string>
+    <string name="price">Цена</string>
+    <string name="photo_is_added">Фото добавлено</string>
+    <string name="add">Добавить</string>
+    <string name="not_all_data_is_filled_in">Не все данные заполнены</string>
+    <string name="any">Любая</string>
 </resources>

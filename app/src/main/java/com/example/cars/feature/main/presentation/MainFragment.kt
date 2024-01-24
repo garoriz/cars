@@ -3,10 +3,18 @@ package com.example.cars.feature.main.presentation
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.cars.R
 import com.example.cars.databinding.FragmentMainBinding
+import com.example.cars.db.AppDatabase
+import com.example.cars.db.Car
+import com.example.cars.feature.main.presentation.adapter.CarListAdapter
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class MainFragment : Fragment(R.layout.fragment_main) {
     //объявление binding'а для связи с xml
@@ -14,6 +22,9 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
     //объявление Shared Preferences для хранения состояния "авторизован ли пользователь"
     private lateinit var sharedPreferences: SharedPreferences
+
+    private var carListAdapter: CarListAdapter? = null
+    private lateinit var db: AppDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,9 +40,21 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         binding = FragmentMainBinding.bind(view)
         //получение из Shared Preferences boolean значения "авторизован ли пользователь"
         val isLogin = sharedPreferences.getBoolean(getString(R.string.is_login), false)
+        db = AppDatabase(requireContext())
 
 
         with(binding) {
+            // при нажатии на машину происходит переход к экрану со всей информацией
+            carListAdapter = CarListAdapter {
+                view.findNavController().navigate(R.id.action_mainFragment_to_carFragment)
+            }
+
+            binding.cars.run {
+                adapter = carListAdapter
+            }
+
+            submitCars()
+
             //при нажатии на кнопку "Параметры" происходит переход к соответствующему экрану
             cvParams.setOnClickListener {
                 view.findNavController()
@@ -50,4 +73,22 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             }
         }
     }
+
+    // получение все авто из БД и отправка в адаптер
+    private fun submitCars() {
+        CoroutineScope(Dispatchers.IO).launch {
+            // получение из БД
+            val cars = db.carDao().getAll("%%") as MutableList<Car>
+            // сортировка машин по id, сначала новые
+            cars.sortByDescending { it.id }
+            withContext(Dispatchers.Main) {
+                carListAdapter?.submitList(cars)
+                with(binding) {
+                    // убирается видимость загрузки
+                    progressBar.isVisible = false
+                }
+            }
+        }
+    }
+
 }

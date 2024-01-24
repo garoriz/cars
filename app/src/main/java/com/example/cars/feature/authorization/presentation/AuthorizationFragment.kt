@@ -58,7 +58,7 @@ class AuthorizationFragment : Fragment(R.layout.fragment_authorization) {
         }
     }
 
-    //показ Snackbara'a
+    //показ Snackbar'a
     private fun showMessage(stringId: Int) {
         Snackbar.make(
             binding.root,
