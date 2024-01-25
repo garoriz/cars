@@ -110,12 +110,23 @@
         app:layout_constraintTop_toBottomOf="@id/tv_color" />
 
     <TextView
+        android:id="@+id/tv_price_value"
         style="@style/Text.Size16.Primary.JuraBold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/x1"
         android:layout_marginTop="@dimen/x1"
-        tools:text="375 000 Р"
         app:layout_constraintStart_toEndOf="@id/tv_color"
-        app:layout_constraintTop_toBottomOf="@id/tv_color_value" />
+        app:layout_constraintTop_toBottomOf="@id/tv_color_value"
+        tools:text="375 000 Р" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

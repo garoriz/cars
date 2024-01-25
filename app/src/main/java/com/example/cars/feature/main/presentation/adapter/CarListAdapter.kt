@@ -6,11 +6,11 @@ import com.example.cars.db.Car
 import com.example.cars.feature.main.presentation.diffutils.CarDiffItemCallback
 
 class CarListAdapter(
-    private val action: (Car) -> Unit,
+    private val action: (Int) -> Unit,
 ) : ListAdapter<Car, CarHolder>(CarDiffItemCallback()) {
     override fun onCreateViewHolder(
         parent: ViewGroup,
-        viewType: Int
+        viewType: Int,
     ): CarHolder = CarHolder.create(parent, action)
 
     override fun onBindViewHolder(holder: CarHolder, position: Int) =

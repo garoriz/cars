@@ -30,7 +30,8 @@ class ParamsFragment : Fragment(R.layout.fragment_params) {
                 ParamValues.brand = tilBrand.editText?.text.toString().trim()
                 ParamValues.model = tilModel.editText?.text.toString().trim()
                 ParamValues.year = tilYear.editText?.text.toString().trim()
-                ParamValues.gearbox = tilGearbox.editText?.text.toString().trim()
+                if (tilGearbox.editText?.text.toString().trim() == getString(R.string.any))
+                    ParamValues.gearbox = ""
                 ParamValues.capacity = tilCapacity.editText?.text.toString().trim()
                 ParamValues.color = tilColor.editText?.text.toString().trim()
                 view.findNavController().popBackStack()

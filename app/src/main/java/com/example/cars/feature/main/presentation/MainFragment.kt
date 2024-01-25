@@ -3,9 +3,11 @@ package com.example.cars.feature.main.presentation
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
+import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import com.example.cars.ParamValues
 import com.example.cars.R
 import com.example.cars.databinding.FragmentMainBinding
 import com.example.cars.db.AppDatabase
@@ -15,6 +17,8 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+
+private const val ARG_NAME = "car_id"
 
 class MainFragment : Fragment(R.layout.fragment_main) {
     //объявление binding'а для связи с xml
@@ -46,7 +50,9 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         with(binding) {
             // при нажатии на машину происходит переход к экрану со всей информацией
             carListAdapter = CarListAdapter {
-                view.findNavController().navigate(R.id.action_mainFragment_to_carFragment)
+                // передача id машины на экран со всеми характеристиками машины
+                view.findNavController()
+                    .navigate(R.id.action_mainFragment_to_carFragment, bundleOf(ARG_NAME to it))
             }
 
             binding.cars.run {
@@ -78,7 +84,14 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     private fun submitCars() {
         CoroutineScope(Dispatchers.IO).launch {
             // получение из БД
-            val cars = db.carDao().getAll("%%") as MutableList<Car>
+            val cars = db.carDao().getAllByParams(
+                "%${ParamValues.brand}%",
+                "%${ParamValues.model}%",
+                "%${ParamValues.year}%",
+                "%${ParamValues.gearbox}%",
+                "%${ParamValues.capacity}%",
+                "%${ParamValues.color}%"
+            ) as MutableList<Car>
             // сортировка машин по id, сначала новые
             cars.sortByDescending { it.id }
             withContext(Dispatchers.Main) {

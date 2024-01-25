@@ -14,9 +14,15 @@ class CarHolder(
     private val binding: ItemCarBinding,
     // действие, котрое будет происходить при нажатии на карточку авто на главном экране
     // в данном случае происходит переход  полным параметрам авто
-    private val action: (Car) -> Unit,
+    private val action: (Int) -> Unit,
 ) : RecyclerView.ViewHolder(binding.root) {
     private var car: Car? = null
+
+    init {
+        itemView.setOnClickListener {
+            car?.id?.also(action)
+        }
+    }
 
     // связываание данных из БД с элементами XML
     fun bind(item: Car) {
@@ -38,7 +44,7 @@ class CarHolder(
 
         fun create(
             parent: ViewGroup,
-            action: (Car) -> Unit,
+            action: (Int) -> Unit,
         ) = CarHolder(
             ItemCarBinding.inflate(
                 LayoutInflater.from(parent.context),
